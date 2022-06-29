@@ -1,0 +1,80 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100vh;
+    width: calc(100% - 33px);
+  } 
+  
+  canvas {
+    position: absolute;
+  }
+  .container {
+    display: flex;
+    width: 100%;
+     justify-content: center;
+    align-items: center; 
+  }
+  
+  
+  .result-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .result-container > div {
+    font-size: 1.3rem;
+    padding: 0.5rem;
+    margin: 5px 0;
+    color: black;
+    text-transform: capitalize;
+  }
+  
+  #age {
+    background: white;
+  }
+  #emotion {
+    background: white;
+  }
+  #gender {
+    background: white;
+  }
+  video {
+    width: 100%;
+  }
+  header {
+    background: black;
+    color: white;
+    width: 100%;
+    font-size: 2rem;
+    padding: 1rem;
+    font-size: 2rem;
+  }
+  
+  
+  .column{
+  float: left;
+  width: 50%;
+  }
+  
+  .row {
+    display: flex;
+  }
+  
+
+#homeid{
+  background-color:Orange;
+   text-align:center;
+    margin-bottom:60px;
+    margin-left: 570px;
+    width: 150px;
+    height: 40px;
+  border: 2px solid black;
+  padding-top: 15px;
+  
+}
+
+
+

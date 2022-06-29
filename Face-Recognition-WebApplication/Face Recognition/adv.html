@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Face recognition WebApp</title>
+    <link rel="stylesheet" href="adv.css" />
+  </head>
+  <body style="background-color: #FFFFE0">
+
+     <header style="background-color:black; text-align:center;">
+       <div class="rowheader">
+       <div class="colheader1" style="color: white">RECORDING REACTIONS</div>
+       </div>
+     </header>
+
+
+         <div class="row">
+          <div style="margin-left:20px; margin-top: 20px; margin-bottom: 50px" class="column">
+            <iframe width="620px" height="415px"
+             src="https://www.youtube.com/embed/XtXJSX71hhg">
+    
+            </iframe>
+            </div>
+        
+            <div class="column">
+             <div class="container" style="margin-bottom:10px;">
+              <video id="video" height="450" width="450" autoplay muted></video>
+            </div>
+            <div class="result-container" style="margin-bottom:60px;">
+              <form method="POST" name="google-sheet">
+                <input type="submit" value="Take my reactions" name="Submit" style="background-color: red; color:white;"><br>
+                <label for="Emotion" style=" font-weight: bold;">Emotion</label>
+                <input type="text" class="autofiller" id="emotion" name="Emotion" style="margin:5px"><br>
+                <label for="Gender" style=" font-weight: bold;">Gender</label>
+                <input type="text" class="autofiller" id="gender" name="Gender" style="margin:5px; margin-left:10px" ><br>
+                <label for="Age" style=" font-weight: bold;">Age</label>
+                <input type="text" class="autofiller" id="age" name="Age" style="margin:5px; margin-left:34px"><br>
+                <br>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div  id="homeid">
+          <a href="index.html#hero" style="color:black; ">BACK TO HOME</a>
+        </div>
+
+      
+    <script src="./js/face-api.min.js"></script>
+    <script src="./js/main.js"></script>
+    <script>
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbza_P50_jGmb5iDOWIjoV9wDKuuvyPmPw2SJ2CtPc-zAxxMzmP4da9iNHb6tL8bvM0Uzw/exec'
+      const form = document.forms['google-sheet']
+    
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+        for(var i=0;i<15;i++){
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          .catch(error => console.error('Error!', error.message))
+        }
+      })
+    </script>
+
+  </body>
+</html>
